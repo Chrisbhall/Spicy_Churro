@@ -1,0 +1,43 @@
+Stories:
+Restaurant name: Spicy Churro
+
+
+---- Core ----
+- user visits the website and places an order
+- user get an sms saying that the store received his order 
+- store can close
+- user can replace items (add/edit/delete)
+- user can cancel order
+- user gets notification of order ready for pickup (sms, website)
+- user gets notification when order is complete (picked up)
+
+---- Database (tables) ----
+- User: id, name, email, phone, backup_phone, password
+
+- Items: id, name, image, size, spice_level, price, description, type
+
+- Burrito_Items: id, name, image, size, spice_level, price, description
+- Drink_Items: id, name, image, size, price, description
+- Orders: id, user_id, ordered_items_id, end_time, total
+- Ordered_items: id, cart_id, order_id, menu_id
+- Cart: id, user_id, menu_id, tomato, lettuce, beans, cheese, guac, cilantro, rice, noodles, 
+- issues (stretch):
+- customer_reviews (stretch):
+
+---- Pages ----
+Home
+About (stretch)
+Menu
+Register (stretch - nice to have)
+Login
+Contact
+Checkout
+Confirmation
+
+---- Stretch ----
+- store notifies user that order was accepted (item not in stock or closing)
+- user can view previous orders
+- report an issue
+- add wiki map to restaurant
+
+
