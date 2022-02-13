@@ -2,6 +2,6 @@ DROP TABLE IF EXISTS carts CASCADE;
 CREATE TABLE carts (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  time_placed TIMESTAMP
+  time_placed TIMESTAMP,
   total_cost_cents SMALLINT
 );

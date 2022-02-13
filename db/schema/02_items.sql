@@ -4,6 +4,7 @@ CREATE TABLE items (
   name VARCHAR(255) NOT NULL,
   photo_url VARCHAR(255) NOT NULL,
   price_cents SMALLINT NOT NULL DEFAULT 0,
+  add_ons TEXT,
   description TEXT,
   type VARCHAR(255)
 );

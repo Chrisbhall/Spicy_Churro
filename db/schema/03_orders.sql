@@ -3,6 +3,6 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   cart_id INTEGER REFERENCES carts(id) ON DELETE CASCADE,
-  time_placed TIMESTAMP
+  time_placed TIMESTAMP,
   total_cost_cents SMALLINT
 );
