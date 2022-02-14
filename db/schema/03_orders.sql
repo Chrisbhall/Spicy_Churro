@@ -4,5 +4,4 @@ CREATE TABLE orders (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   cart_id INTEGER REFERENCES carts(id) ON DELETE CASCADE,
   time_placed TIMESTAMP,
-  total_cost_cents SMALLINT
 );
