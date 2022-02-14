@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS ordered_items CASCADE;
-CREATE TABLE ordered_items (
+DROP TABLE IF EXISTS cart_and_ordered_items CASCADE;
+CREATE TABLE cart_and_ordered_items (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
