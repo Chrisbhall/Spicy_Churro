@@ -6,9 +6,15 @@
   <a class="nav" href="/contact">Contact</a>
 </nav>
   <div>
-    <a class="nav" id="cart" href="/cart">Cart</a>
+    <button id="cart_display">Cart</button>
   </div>
   <div>
-    <a class="nav" id="login" href="/login">Login / Register</a>
+    <form method="POST" action="/login">
+      <input type="submit" value="login"/>
+    </form>
+    <form method="POST" action="/logout">
+      <input type="submit" value="logout"/>
+    </form>
+    <!--<a class="nav" id="login" method="POST" href="/login">Login / Register</a>-->
   </div>
 

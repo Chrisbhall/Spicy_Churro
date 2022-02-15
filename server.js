@@ -7,11 +7,23 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bcrypt = require('bcrypt');
+const cookieSession = require('cookie-session');
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+}));
+
 
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
-const db = new Pool(dbParams);
+const db = new Pool({
+  user: 'labber',
+  password: 'labber',
+  host: 'localhost',
+  database: 'midterm'
+});
 db.connect();
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -32,6 +44,7 @@ app.use(
 );
 
 app.use(express.static("public"));
+//app.use("/menu",db);
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -55,7 +68,31 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about");
 });
+app.get("/menu", (req, res) => {
+  res.render("menu");
+});
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+app.get("/checkout", (req, res) => {
+  res.render("checkout");
+});
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
+
+// redirect to login & destroy cookie session
+app.post("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/");
+});
+
+
+app.post("/login", (req, res) => {
+  req.session.user_id = 1;
+  res.redirect("/");
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
