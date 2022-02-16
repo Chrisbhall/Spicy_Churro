@@ -9,11 +9,11 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/menu", (req, res) => {
+  router.get("/", (req, res) => {
     db.query(`SELECT * FROM items;`)
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const menus = data.rows;
+        res.json({ menus });
       })
       .catch(err => {
         res
@@ -25,12 +25,4 @@ module.exports = (db) => {
 };
 
 
-const getUserWithEmail = function(email) {
-  return pool
-    .query(`SELECT name, email, id, password FROM users WHERE email=$1`,[email])
-    .then((result)=> result.rows[0])
-    .catch((err)=>{
-      console.log(err.message);
-    })
-}
-exports.getUserWithEmail = getUserWithEmail;
+

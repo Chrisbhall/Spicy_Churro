@@ -4,18 +4,22 @@
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 </head>
 <script>
+
   $(function(){
     $("#head").load("/head.html");
     $("#header").load("/header.html");
+    $("#cart").load("/cart.html");
     $("#footer").load("/footer.html");
   });
+  // $(function(){
+  //   alert("hello" + results);
+  // });
   </script>
 <body>
+  <div id="cart"></div>
   <header id="header"></header>
-  <section>
-  <h1>Contact Us</h1>
-  <p>Phone: 905-434-1909</p>
-  <p>Email: support@spicychurro.com</p>
+  <h1>Menu</h1>
+  <section class="items">
 </section>
   <footer id="footer"></footer>
 </body>

@@ -4,6 +4,7 @@ header{
   background-color:#3b2523;
   display:flex;
   justify-content: space-between;
+  z-index:3;
 }
 nav{
   display: flex;
@@ -24,9 +25,9 @@ a.nav{
 .nav:hover{
   background-color:#efdeb2;
 }
-#cart{
+/*#cart{
   display:none;
-}
+}*/
 #login{
   overflow-wrap: break-word;
 }

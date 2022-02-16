@@ -1,14 +1,20 @@
 <nav>
   <a  href="/"><img  class="desktop" src="/images/Spicy_Churro.png"><img  class="mobile" src="/images/logo.png"></a>
   <a class="nav" href="/">Home</a>
-  <a class="nav" href="/about.html">About</a>
-  <a class="nav" href="/menu.html">Menu</a>
-  <a class="nav" href="/contact.html">Contact</a>
+  <a class="nav" href="/about">About</a>
+  <a class="nav" href="/menu">Menu</a>
+  <a class="nav" href="/contact">Contact</a>
 </nav>
   <div>
-    <a class="nav" id="cart" href="/cart">Cart</a>
+    <button id="cart_display">Cart</button>
   </div>
   <div>
-    <a class="nav" id="login" href="/login.html">Login / Register</a>
+    <form method="POST" action="/login">
+      <input type="submit" value="login"/>
+    </form>
+    <form method="POST" action="/logout">
+      <input type="submit" value="logout"/>
+    </form>
+    <!--<a class="nav" id="login" method="POST" href="/login">Login / Register</a>-->
   </div>
 
