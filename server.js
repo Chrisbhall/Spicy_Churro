@@ -102,3 +102,24 @@ app.post("/login", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
+
+
+// SMS messaging Handling
+
+const http = require('http');
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
+app.post('/', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message('The Robots are coming! Head for the hills!');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+});
+
+http.createServer(app).listen(3000, () => {
+  console.log('Express server listening on port 3000');
+});
