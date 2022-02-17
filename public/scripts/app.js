@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  $(".toppings").hide();
   $("#cart").hide();
   $("#cart_display").click(function(){
     $("#cart").toggle();
