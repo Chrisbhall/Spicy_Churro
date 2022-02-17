@@ -42,9 +42,20 @@ a.nav{
   color:#ef4507;
   width:70px;
 }
-#cart_display:hover{
+#cart_display:hover, #login_button:hover{
   cursor:pointer;
   background-color:#efdeb2;
+}
+#login{
+  height:100%;
+}
+#login_button{
+  height:100%;
+  border:none;
+  outline:none;
+  background:none;
+  color:#ef4507;
+  width:170px;
 }
 @media (max-width: 950px) {
   .desktop{

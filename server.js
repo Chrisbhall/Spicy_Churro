@@ -95,8 +95,13 @@ app.post("/logout", (req, res) => {
 
 
 app.post("/login", (req, res) => {
+  if (req.session.user_id){
+    req.session = null;
+  res.redirect("/");
+  }else{
   req.session.user_id = 1;
   res.redirect("/");
+  }
 });
 
 app.listen(PORT, () => {
