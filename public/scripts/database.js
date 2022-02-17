@@ -17,3 +17,15 @@ const getMenuItems = function() {
 }
 
 exports.getMenuItems = getMenuItems;
+
+const getPhoneNumber = (user_id) => {
+  return pool
+    .query(`SELECT phone FROM users
+     WHERE id = $1 `, [user_id])
+    .then((result) => console.log(result.rows[0].phone))
+    .catch((err) => {
+      return (err.message);
+    });
+};
+exports.getPhoneNumber = getPhoneNumber;
+getPhoneNumber(1);
