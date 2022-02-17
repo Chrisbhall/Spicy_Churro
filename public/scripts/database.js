@@ -22,20 +22,20 @@ const getPhoneNumber = (user_id) => {
   return pool
     .query(`SELECT phone FROM users
      WHERE id = $1 `, [user_id])
-    .then((result) => console.log(result.rows[0].phone))
+    .then((result) => result.rows[0].phone)
     .catch((err) => {
       return (err.message);
     });
 };
 exports.getPhoneNumber = getPhoneNumber;
 
-const createCartid = (user_id) => {
+const createCartid = () => {
   return pool
-    .query(`INSERT INTO carts(user_id, time_started) VALUES($1, CURRENT_TIMESTAMP)
-     WHERE id = $1 `, [user_id])
-    .then((result) => console.log(result.rows[0].phone))
+    .query(`SELECT COUNT(*) FROM carts `)
+    .then((result) => result.rows[0].count)
     .catch((err) => {
       return (err.message);
     });
 };
 exports.createCartid = createCartid;
+createCartid();

@@ -67,6 +67,12 @@ article.menu{
 .hidden_id{
   display:hidden;
 }
+.toppings{
+  display:none;
+  position:fixed;
+  background-color:white;
+  z-index:5;
+}
 div.articles{
   display:flex;
   flex-direction: row;

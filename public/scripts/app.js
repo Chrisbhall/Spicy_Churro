@@ -1,7 +1,12 @@
 $(document).ready(function() {
-  $("#cart_display").click(function(){
-    $("#cart").toggle();
+$("#cart_display").click(function(){
+$("#cart").toggle();
+$(".menu").click(function(event){
+ $(".toppings").show();
+  alert(this.id);
+})
 });
+
 
 console.log("loading app.js");
 
@@ -27,9 +32,4 @@ console.log("loading app.js");
   $.get('/api/menus').then((data) => {
     renderItems(data.menus);
   }).catch(err => console.log(err))
-
-  $(".menu").click(function(event){
-    console.log((this.id));
-  })
-
 });
