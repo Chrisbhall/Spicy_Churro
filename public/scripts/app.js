@@ -80,13 +80,6 @@ $(document).ready(function() {
       const $item = createMenuElement(items[i]);
       $('section.items').append($item);
     }
-  };
-  // generate the item information into specific elements
-  const createMenuElement = function(item) {
-
-    const content = `<img src=${item.photo_url} width="200"
-    height="200"><h3>${item.name} </h3><p>${item.description}</p><p>$ ${item.price_cents/Math.pow(10, 2)}</p>`;
-    const output = `<article class='menu' id='${item.id}'>${content}</article>`;
     $(".menu").click(function(event){
       if (this.id>=9){
         $(".sec").hide();
@@ -98,6 +91,13 @@ $(document).ready(function() {
       $("input#item_id").val(this.id);
       }
     });
+  };
+  // generate the item information into specific elements
+  const createMenuElement = function(item) {
+
+    const content = `<img src=${item.photo_url} width="200"
+    height="200"><h3>${item.name} </h3><p>${item.description}</p><p>$ ${item.price_cents/Math.pow(10, 2)}</p>`;
+    const output = `<article class='menu' id='${item.id}'>${content}</article>`;
     return output;
 
   };
