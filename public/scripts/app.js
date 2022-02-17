@@ -1,11 +1,12 @@
 $(document).ready(function() {
+
+  $("#cart").hide();
   $("#cart_display").click(function(){
     $("#cart").toggle();
 
   $(".menu").click(function(event){
     $(".toppings").show();
     $("input#item_id").val(this.id);
-    alert(this.id);
   })
   });
 

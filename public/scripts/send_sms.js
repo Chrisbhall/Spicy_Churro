@@ -2,13 +2,18 @@
 // Find your Account SID and Auth Token at twilio.com/console
 // and set the environment variables. See http://twil.io/secure
 const accountSid = "AC62c23f1fddbf62f6e49355d5f06403c0";
-const authToken = "5ed373d0cb5019ffa2116d1c4f1bf3a2";
+const authToken = "47a7dd1c5737966999345a9f34c7e71a";
 const client = require('twilio')(accountSid, authToken);
+const database = require('./database');
+const number = database.getPhoneNumber(1);
+number.then(value=> {console.log('+1'+value);
 
 client.messages
   .create({
-     body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+     body: 'Your order has been confirmed!',
      from: '+19362433062',
-     to: '+19053341614'
+     to: '+1'+value
    })
   .then(message => console.log(message.sid));
+
+});
