@@ -58,6 +58,15 @@ article.menu{
   padding:1%;
   display:inline-block;
 }
+.menu:hover{
+  cursor: pointer;
+  border-style:solid;
+  border-color:#7e9e00;
+  box-shadow: 5px 10px;
+}
+.hidden_id{
+  display:hidden;
+}
 div.articles{
   display:flex;
   flex-direction: row;
