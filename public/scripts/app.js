@@ -3,9 +3,8 @@ $(document).ready(function() {
   $("#cart").hide();
   $("#cart_display").click(function(){
     $("#cart").toggle();
+    $(".toppings").hide();
   });
-
-
 
   console.log("loading app.js");
 

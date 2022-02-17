@@ -93,15 +93,13 @@ app.post("/logout", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/");
+});
 
-app.post("/login", (req, res) => {
-  if (req.session.user_id){
-    req.session = null;
-  res.redirect("/");
-  }else{
-  req.session.user_id = 1;
-  res.redirect("/");
-  }
+app.post("/cart", (req, res) => {
+  console.log(req.body)
 });
 
 app.listen(PORT, () => {
