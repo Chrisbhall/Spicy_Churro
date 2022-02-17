@@ -10,10 +10,11 @@ const pool = new Pool({
 const getMenuItems = function() {
   return pool
     .query(`SELECT * FROM items`)
-    .then((result)=> result.rows)
+    .then((result)=>result.rows)
     .catch((err)=>{
       console.log(err.message);
     })
 }
 
 exports.getMenuItems = getMenuItems;
+

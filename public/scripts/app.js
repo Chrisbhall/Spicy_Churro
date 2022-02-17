@@ -1,6 +1,9 @@
 $(document).ready(function() {
 $("#cart_display").click(function(){
 $("#cart").toggle();
+$(".menu").click(function(event){
+  alert(this.id);
+})
 });
 
 console.log("loading app.js");
@@ -19,8 +22,9 @@ console.log("loading app.js");
   const createMenuElement = function(item) {
 
     const content = `<img src=${item.photo_url} width="200"
-    height="200"><h3>${item.name} </h3><p>${item.description}</p><p>${item.price_cents}</p>`;
-    const output = "<article class='menu'>" + content + "</article>";
+    height="200"><h3>${item.name} </h3><p>${item.description}</p><p>$ ${item.price_cents/Math.pow(10, 2)}</p>`;
+    const output = `<article class='menu' id='${item.id}'>${content}</article>`;
+    console.log(item.id);
     return output;
   };
 
