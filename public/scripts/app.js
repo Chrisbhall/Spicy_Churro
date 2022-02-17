@@ -1,7 +1,12 @@
 $(document).ready(function() {
 $("#cart_display").click(function(){
 $("#cart").toggle();
+$(".menu").click(function(event){
+ $(".toppings").show();
+  alert(this.id);
+})
 });
+
 
 console.log("loading app.js");
 
