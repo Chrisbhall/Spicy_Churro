@@ -23,15 +23,15 @@
 </section>
 <div class="toppings">
   <form method="POST" action="\cart">
-    <!--<input type="text" id="item_id">-->
+    <input type="hidden" id="item_id">
     <label for="large">Large</label>
-    <input type="radio" id="large" name="size" placeholder="Large">
+    <input type="radio" id="large" name="size" value="Large">
     <label for="medium">Medium</label>
-    <input type="radio" id="medium" name="size" placeholder="Medium">
+    <input type="radio" id="medium" name="size" value="Medium">
     <label for="small">Small</label>
-    <input type="radio" id="small" name="size" placeholder="Small"><br>
+    <input type="radio" id="small" name="spice" value="Small"><br>
     <label for="spice">Spice Level from 0 to 5</label><br>
-    <input type="range" id="spice" name="size" min="0" max="5" placeholder="3"><br>
+    <input type="range" id="spice" name="spice" min="0" max="5" placeholder="3"><br>
     <input type="checkbox" id="tomato" name="tomato" value="1">
     <label for="tomato">Tomato</label><br>
     <input type="checkbox" id="lettuce" name="lettuce" value="1">

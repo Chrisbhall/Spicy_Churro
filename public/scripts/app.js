@@ -88,8 +88,20 @@ $(document).ready(function() {
     height="200"><h3>${item.name} </h3><p>${item.description}</p><p>$ ${item.price_cents/Math.pow(10, 2)}</p>`;
     const output = `<article class='menu' id='${item.id}'>${content}</article>`;
     $(".menu").click(function(event){
+      if (this.id>=9){
+       $("#tomato").hide();
+       $("#spice").hide();
+       $("#lettuce").hide();
+       $("#beans").hide();
+       $("#cheese").hide();
+       $("#guac").hide();
+       $("#cilantro").hide();
+       $("#rice").hide();
+       $("#noodles").hide();
+      }else{
       $(".toppings").show();
       $("input#item_id").val(this.id);
+      }
     });
     return output;
 
