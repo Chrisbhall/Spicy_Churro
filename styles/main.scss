@@ -7,7 +7,6 @@ green: #7e9e00
 */
 
 
-
 body {
   background-color: #efdeb2;
   display:flex;
@@ -72,6 +71,8 @@ article.menu{
   //display:none;
   position:fixed;
   margin-top:100px;
+  width:35%;
+  height:350px;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -88,6 +89,9 @@ div.articles{
     height:100%;
   }
 article.menu{
+  width:100%;
+}
+.toppings{
   width:100%;
 }
 }
