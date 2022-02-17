@@ -1,5 +1,5 @@
-INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Cian Burt', 'CianBurt839@gmail.com', 2894573652, 6473241103, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
-INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Kamil Ayala', 'KamilAyala840@hotmail.com', 6471982436, 4163452035, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
+INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Cian Burt', 'CianBurt839@gmail.com', 9053341614, 6473241103, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
+INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Kamil Ayala', 'KamilAyala840@hotmail.com', 6479849541, 4163452035, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Sebastien Byrd', 'SebastienByrd793@gmail.com', 6478708447, 4165450521, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Adam Morse', 'AdamMorse752@hotmail.ca', 6478978999, 6472340350, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 INSERT INTO users (name, email, phone, backup_phone, password) VALUES ('Artem Berg', 'ArtemBerg465@gmail.com', 4169838995, 9059648883, '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');

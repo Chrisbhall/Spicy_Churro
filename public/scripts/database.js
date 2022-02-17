@@ -28,4 +28,14 @@ const getPhoneNumber = (user_id) => {
     });
 };
 exports.getPhoneNumber = getPhoneNumber;
-getPhoneNumber(1);
+
+const createCartid = (user_id) => {
+  return pool
+    .query(`INSERT INTO carts(user_id, time_started) VALUES($1, CURRENT_TIMESTAMP)
+     WHERE id = $1 `, [user_id])
+    .then((result) => console.log(result.rows[0].phone))
+    .catch((err) => {
+      return (err.message);
+    });
+};
+exports.createCartid = createCartid;
