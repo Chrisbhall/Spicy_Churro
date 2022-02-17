@@ -89,16 +89,11 @@ $(document).ready(function() {
     const output = `<article class='menu' id='${item.id}'>${content}</article>`;
     $(".menu").click(function(event){
       if (this.id>=9){
-       $("#tomato").hide();
-       $("#spice").hide();
-       $("#lettuce").hide();
-       $("#beans").hide();
-       $("#cheese").hide();
-       $("#guac").hide();
-       $("#cilantro").hide();
-       $("#rice").hide();
-       $("#noodles").hide();
+        $(".sec").hide();
+        $(".toppings").show();
+      $("input#item_id").val(this.id);
       }else{
+        $(".sec").show();
       $(".toppings").show();
       $("input#item_id").val(this.id);
       }
