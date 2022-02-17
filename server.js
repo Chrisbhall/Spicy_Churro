@@ -83,20 +83,16 @@ app.get("/contact", (req, res) => {
 app.get("/checkout", (req, res) => {
   res.render("checkout");
 });
-app.get("/login", (req, res) => {
-  res.render("login");
+app.post("/login", (req, res) => {
+  if (req.session.user_id){
+    req.session = null;
+    res.redirect("/");
+  }
+  req.session.user_id=1;
+  res.redirect("/");
 });
 
 // redirect to login & destroy cookie session
-app.post("/logout", (req, res) => {
-  req.session = null;
-  res.redirect("/");
-});
-
-app.post("/logout", (req, res) => {
-  req.session = null;
-  res.redirect("/");
-});
 
 app.post("/cart", (req, res) => {
   console.log(req.body)
