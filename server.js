@@ -51,12 +51,16 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const menuRoutes = require('./routes/menus');
+const cartRoutes = require('./routes/carts');
+const sumRoutes = require('./routes/cartsum')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/menus", menuRoutes(db));
+
+
 
 // Note: mount other resources here, using the same pattern above
 
@@ -74,8 +78,8 @@ app.get("/about", (req, res) => {
 app.get("/menu", (req, res) => {
   database.getMenuItems()
     .then(results => {
-      res.render("menu", {results})
-    })
+      res.render("menu", { results });
+    });
 });
 app.get("/contact", (req, res) => {
   res.render("contact");
@@ -84,18 +88,41 @@ app.get("/checkout", (req, res) => {
   res.render("checkout");
 });
 app.post("/login", (req, res) => {
-  if (req.session.user_id){
+  if (req.session.user_id) {
     req.session = null;
     res.redirect("/");
   }
-  req.session.user_id=1;
+  req.session.user_id = 1;
   res.redirect("/");
 });
 
 // redirect to login & destroy cookie session
 
 app.post("/cart", (req, res) => {
-  console.log(req.body)
+  if (!req.session.cart_id) {
+    database.createCartid()
+      .then(results => {
+        req.session.cart_id = results;
+        app.use("/api/carts", cartRoutes(db, results));
+        app.use("/api/cartsum", sumRoutes(db, results));
+        console.log(req.session.cart_id);
+        database.createCartsql(req.session.user_id, req.session.cart_id);
+        database.createItemid()
+          .then(results => {
+            database.createItemsql(results, req.session.user_id, req.session.cart_id, req.body);
+            res.redirect('/menu');
+          });
+      });
+  } else {
+    results = req.session.cart_id
+    app.use("/api/carts", cartRoutes(db, results));
+    app.use("/api/cartsum", sumRoutes(db, results));
+    database.createItemid()
+      .then(results => {
+        database.createItemsql(results, req.session.user_id, req.session.cart_id, req.body);
+        res.redirect('/menu');
+      });
+  }
 });
 
 app.listen(PORT, () => {
@@ -114,7 +141,7 @@ app.post('/', (req, res) => {
 
   twiml.message(' blahh text');
 
-  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.writeHead(200, { 'Content-Type': 'text/xml' });
   res.end(twiml.toString());
 });
 
