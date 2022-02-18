@@ -23,31 +23,31 @@
 </section>
 <div class="toppings">
   <form method="POST" action="\cart">
-    <!--<input type="text" id="item_id">-->
+    <input type="text" name= "item_id" id="item_id">
     <label for="large">Large</label>
-    <input type="radio" id="large" name="size" placeholder="Large">
+    <input type="radio" id="large" name="size" value="Large">
     <label for="medium">Medium</label>
-    <input type="radio" id="medium" name="size" placeholder="Medium">
+    <input type="radio" id="medium" name="size" value="Medium">
     <label for="small">Small</label>
-    <input type="radio" id="small" name="size" placeholder="Small"><br>
-    <label for="spice">Spice Level from 0 to 5</label><br>
-    <input type="range" id="spice" name="size" min="0" max="5" placeholder="3"><br>
-    <input type="checkbox" id="tomato" name="tomato" value="1">
-    <label for="tomato">Tomato</label><br>
-    <input type="checkbox" id="lettuce" name="lettuce" value="1">
-    <label for="lettuce">Lettuce</label><br>
-    <input type="checkbox" id="beans" name="beans" value="1">
-    <label for="beans">Beans</label><br>
-    <input type="checkbox" id="cheese" name="cheese" value="1">
-    <label for="cheese">Cheese</label><br>
-    <input type="checkbox" id="guac" name="guac" value="1">
-    <label for="guac">Guac</label><br>
-    <input type="checkbox" id="cilantro" name="cilantro" value="1">
-    <label for="cilantro">Cilantro</label><br>
-    <input type="checkbox" id="rice" name="rice" value="1">
-    <label for="rice">Rice</label><br>
-    <input type="checkbox" id="noodles" name="noodles" value="1">
-    <label for="noodles">Noodles</label><br>
+    <input type="radio" id="small" name="size" value="Small"><br>
+    <label class="sec" for="spice">Spice Level from 0 to 5</label><br>
+    <input class="sec" type="range" id="spice" name="spice_level" min="0" max="5" placeholder="NULL"><br>
+    <input class="sec" type="checkbox" id="tomato" name="tomato" value="TRUE">
+    <label class="sec" for="tomato">Tomato</label><br>
+    <input class="sec" type="checkbox" id="lettuce" name="lettuce" value="TRUE">
+    <label class="sec" for="lettuce">Lettuce</label><br>
+    <input class="sec" type="checkbox" id="beans" name="beans" value="TRUE">
+    <label class="sec" for="beans">Beans</label><br>
+    <input class="sec" type="checkbox" id="cheese" name="cheese" value="TRUE">
+    <label class="sec" for="cheese">Cheese</label><br>
+    <input class="sec" type="checkbox" id="guac" name="guac" value="TRUE">
+    <label class="sec" for="guac">Guac</label><br>
+    <input class="sec" type="checkbox" id="cilantro" name="cilantro" value="TRUE">
+    <label class="sec" for="cilantro">Cilantro</label><br>
+    <input class="sec" type="checkbox" id="rice" name="rice" value="TRUE">
+    <label class="sec" for="rice">Rice</label><br>
+    <input class="sec" type="checkbox" id="noodles" name="noodles" value="TRUE">
+    <label class="sec" for="noodles">Noodles</label><br>
     <input type="submit" value="Add to Cart">
   </form>
 </div>
