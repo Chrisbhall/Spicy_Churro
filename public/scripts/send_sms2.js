@@ -10,7 +10,7 @@ const number = database.getPhoneNumber(1);
 number.then(value=> {console.log('+1'+value);
 client.messages
   .create({
-     body: 'Your order has been confirmed!',
+     body: 'Your order is ready for pickup!',
      from: '+19362433062',
      to: '+1'+value
    })

@@ -84,9 +84,10 @@ app.get("/menu", (req, res) => {
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
-app.get("/checkout", (req, res) => {
-  res.render("checkout");
-});
+/*app.get("/checkout", (req, res) => {
+
+
+});*/
 app.post("/login", (req, res) => {
   if (req.session.user_id) {
     req.session = null;
@@ -136,13 +137,23 @@ app.listen(PORT, () => {
 const http = require('http');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
-app.post('/', (req, res) => {
-  const twiml = new MessagingResponse();
+app.get('/checkout', (req, res) => {
+  const sms = require('./public/scripts/send_sms');
+  res.render("checkout");
+});
+app.post('/checkout', (req, res) => {
+  const sms3 = require('./public/scripts/send_sms');
+  res.render("checkout");
+});
+app.get('/complete', (req, res) => {
+  const sms2 = require('./public/scripts/send_sms2');
+ /* const twiml = new MessagingResponse();
 
-  twiml.message(' blahh text');
+  twiml.message(' Your order is ready for pickup!');
 
   res.writeHead(200, { 'Content-Type': 'text/xml' });
-  res.end(twiml.toString());
+  res.end(twiml.toString());*/
+  res.render("complete");
 });
 
 http.createServer(app).listen(3000, () => {

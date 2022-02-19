@@ -2,8 +2,8 @@ $(document).ready(function() {
   $(".toppings").hide();
   $("#cart").hide();
   $("#cart_display").click(function(){
-    $("#cart").toggle();
-    $(".toppings").hide();
+    $(".toppings").slideUp('slow');
+    $("#cart").toggle('slow');
   });
 
   console.log("loading app.js");
@@ -11,6 +11,10 @@ $(document).ready(function() {
   $('#login_button').click(function() {
     $('#cartElements').html('');
 
+  })
+
+  $('#closeToppings').click(function() {
+    $(".toppings").slideUp('slow');
   })
   const $form = $('#menuForm');
   $form.on('submit', function (e) {
@@ -36,14 +40,16 @@ $(document).ready(function() {
     $(".menu").click(function(event){
       if (this.id>=9){
         $(".sec").hide();
-        $(".toppings").show();
-      $("input#item_id").val(this.id);
+        $("#item_id").hide();
+        $(".toppings").slideDown("slow");
+        $("input#item_id").val(this.id);
       }else{
         $(".sec").show();
-      $(".toppings").show();
-      $("input#item_id").val(this.id);
+        $("#item_id").hide();
+        $(".toppings").slideDown("slow");
+        $("input#item_id").val(this.id);
       }
-    });
+     });
   };
 
   const createCartElement = function(obj) {
@@ -52,7 +58,7 @@ $(document).ready(function() {
     const layout = `
         <article>
           <h4>${obj.name}</h4>
-          <p>${obj.price_cents}</p>
+          <p>${obj.price_cents/100}</p>
         </article>
         `
         return layout
@@ -71,20 +77,8 @@ $(document).ready(function() {
     const content = `<img src=${item.photo_url} width="200"
     height="200"><h3>${item.name} </h3><p>${item.description}</p><p>$ ${item.price_cents/Math.pow(10, 2)}</p>`;
     const output = `<article class='menu' id='${item.id}'>${content}</article>`;
-    $(".menu").click(function(event){
-      if (this.id>=9){
-        $(".sec").hide();
-        $("#item_id").hide();
-        $(".toppings").show();
-        $("input#item_id").val(this.id);
-      }else{
-        $(".sec").show();
-        $("#item_id").hide();
-        $(".toppings").show();
-        $("input#item_id").val(this.id);
-      }
-     });
-     return output;
+
+    return output;
 
   };
 

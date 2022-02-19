@@ -22,7 +22,8 @@
   <section class="items">
 </section>
 <div class="toppings">
-  <form method="POST" action="\cart">
+  <h4>Customizations</h4>
+  <form id = "customForm" method="POST" action="\cart">
     <input type="text" name= "item_id" id="item_id">
     <label for="large">Large</label>
     <input type="radio" id="large" name="size" value="Large">
@@ -48,8 +49,12 @@
     <label class="sec" for="rice">Rice</label><br>
     <input class="sec" type="checkbox" id="noodles" name="noodles" value="TRUE">
     <label class="sec" for="noodles">Noodles</label><br>
-    <input type="submit" value="Add to Cart">
+    <div class="sideButton">
+      <input type="submit" value="Add to Cart">
+      <input id="closeToppings" type='button' value='Order Something Else'>
+    </div>
   </form>
+
 </div>
   <footer id="footer"></footer>
 </body>
